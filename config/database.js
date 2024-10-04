@@ -2,6 +2,11 @@
 const { Sequelize } = require('sequelize');
 require('dotenv').config();
 
+
+const dialecto = process.env.NODE_ENV === 'production' 
+    ? 'postgres' 
+    : 'mysql';
+
 // Configuración de Sequelize con las variables de entorno
 const sequelize = new Sequelize(
   process.env.DB_NAME,         // Nombre de la base de datos
@@ -9,7 +14,7 @@ const sequelize = new Sequelize(
   process.env.DB_PASSWORD,     // Contraseña de la base de datos
   {
     host: process.env.DB_HOST, // Host de la base de datos
-    dialect: 'mysql',          // Dialecto que estás usando (MySQL)
+    dialect: dialecto,          // Dialecto que estás usando (MySQL)
   }
 );
 
