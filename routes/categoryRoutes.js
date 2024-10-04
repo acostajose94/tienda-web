@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const authenticate = require('../middlewares/authMiddleware');  // Middleware de autenticación
 const isAdmin = require('../middlewares/adminMiddleware');     // Middleware de autorización
-const categoryController = require('../controllers/categoryController');
+const categoryController = require('../controllers/categoryController.js');
 
 // Ruta para crear una nueva categoría
 router.post('/',categoryController.createCategory);
