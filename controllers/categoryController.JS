@@ -15,6 +15,7 @@ exports.createCategory = async (req, res) => {
   }
 };
 
+
 // Obtener todas las categorías
 exports.getAllCategories = async (req, res) => {
   try {
