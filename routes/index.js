@@ -15,6 +15,6 @@ router.use('/products', productRoutes);
 router.use('/cart', cartRoutes);
 //router.use('/orders', orderRoutes);
 router.use('/payments', paymentRoutes);
-router.use('/categories', categoryRoutes); // Corregido el nombre
+// router.use('/categories', categoryRoutes); // Corregido el nombre
 console.log("routes");
 module.exports = router;
