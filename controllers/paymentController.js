@@ -2,6 +2,21 @@ require('dotenv').config();
 const stripe = require('stripe')(process.env.STRIPE_SECRET);
 const { Order, Payment, CartItem, Product } = require('../models'); // Asegúrate de incluir CartItem aquí
 
+
+const successUrl = process.env.NODE_ENV === 'production' 
+    ? 'https://tienda-web-gnvj.onrender.com/success' 
+    : 'http://localhost:5000/success';
+
+const cancelUrl = process.env.NODE_ENV === 'production' 
+    ? 'https://tienda-web-gnvj.onrender.com/cancel' 
+    : 'http://localhost:5000/cancel';
+
+
+
+
+
+
+
 const handlePaymentSuccess = async (req, res) => {
   const { sessionId } = req.body;
 
@@ -102,8 +117,8 @@ const createPayment= async(req,res)=>{
         payment_method_types: ['card'], // Métodos de pago aceptados
         line_items: line_items,
         mode: 'payment', // Puedes cambiar a 'subscription' si es necesario
-        success_url: 'http://localhost:5000/success', // URL de éxito
-        cancel_url: 'http://localhost:5000/cancel', // URL de cancelación
+        success_url: successUrl, // URL de éxito
+        cancel_url: cancelUrl, // URL de cancelación
     });
     // await Payment.create({
     //   amount: order.totalPrice,
