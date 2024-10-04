@@ -4,11 +4,11 @@ const { Order, Payment, CartItem, Product } = require('../models'); // Asegúrat
 
 
 const successUrl = process.env.NODE_ENV === 'production' 
-    ? 'https://tienda-web-gnvj.onrender.com/success' 
+    ? 'https://tienda-web-gnvj.onrender.com/success.html' 
     : 'http://localhost:5000/success';
 
 const cancelUrl = process.env.NODE_ENV === 'production' 
-    ? 'https://tienda-web-gnvj.onrender.com/cancel' 
+    ? 'https://tienda-web-gnvj.onrender.com/cancel.html' 
     : 'http://localhost:5000/cancel';
 
 
