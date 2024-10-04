@@ -9,7 +9,8 @@ const sequelize = new Sequelize(
   process.env.DB_PASSWORD,     // Contraseña de la base de datos
   {
     host: process.env.DB_HOST, // Host de la base de datos
-    dialect: 'mysql',          // Dialecto que estás usando (MySQL)
+    dialect: 'postgres',        // Cambia a 'mysql' si tu base de datos es MySQL
+    port: process.env.DB_PORT,  // Puerto de la base de datos
   }
 );
 
